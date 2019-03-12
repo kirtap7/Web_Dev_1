@@ -1,0 +1,501 @@
+/* CSS for homepage index.html and features common to all pages*/
+
+/* CSS for homepage, full background picture */
+/* followed tutorial https://www.youtube.com/watch?v=a2UnYs9AA_M*/
+body.homepage{
+    background-image: url(images/background.jpg); 
+    /* source https://www.pexels.com/photo/white-and-red-plastic-heart-balloon-on-sky-during-daytime-33479/ */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+/* CSS for other pages, partial background picture */
+body.nohome{
+    background-image: url(images/background_head.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+/* navigation bar created following https://www.w3schools.com/css/css_navbar.asp */
+ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    overflow: hidden;
+}
+
+li.menu{
+    float:right;
+    list-style: none;
+}
+
+li.menu a{
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 23px;
+}
+
+/*making only part of the nav bar affected by the hover effect*/ 
+li.menu a:hover:not(.home) {
+    background-color: #DA291C;
+    color: white;
+    font-weight: bold;
+    font-size: 27x;
+    text-decoration: underline;
+}
+    
+li.menu a.home {
+    background-color: white;
+}
+
+li.menu a.active {
+    background-color: #DA291C;
+    color: white;
+}
+
+.menu{
+    border-radius: 17px;
+}
+
+/* making the nav bar responsive when resizing the browser - source https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp*/
+@media screen and (max-width: 650px) {
+  .menu {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+/* heading h1 for home page */
+h1{
+    color: darkred;
+    font-style: italic;
+    font-size: 4.5vw; /*responsive font size */
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+/* heading h2 for heading of other pages */
+h2{
+    color: darkred;
+    font-style: italic;
+    font-size: 60px;
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15vw;
+    font-weight: bold;
+}
+
+/* home page paragraph */
+
+p#home {
+    text-align: center;
+    font-size: 3.5vw;
+    color: black;
+    font-family: 'Indie Flower', cursive;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+/* animated DONATE button on homepage created following https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate1 */
+.donate_btn {
+    border-radius: 8px;
+    background-color: #DA291C;
+    border: none;
+    color: white;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3vw;
+    padding: 5px;
+    width: 20vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 40vw;
+    margin-right: 40vw;
+    margin-bottom: 40px;
+}
+
+.donate_btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 1s; /* time to make the animation appear */
+}
+
+.donate_btn span:after {
+    content: '\2665'; 
+    /* heart symbol from https://www.w3schools.com/cssref/css_entities.asp */
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 1px;
+    transition: 0.5s; /* time to make the animation disappear */
+}
+
+.donate_btn:hover span {
+    padding-right: 5vw;
+}
+
+.donate_btn:hover span:after {
+    opacity: 1;
+    font-size: 3vw;
+}
+
+/* footer common to all pages created following   
+https://www.w3schools.com/Tags/tag_footer.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fixed_footer
+https://stackoverflow.com/questions/38505021/how-do-you-make-a-footer-with-links-using-css
+https://stackoverflow.com/questions/6722467/how-to-remove-the-default-link-color-of-the-html-hyperlink-a-tag */
+footer{
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: white;
+    color: black;
+    font-family: cursive;
+    font-size: 12px;
+    opacity: 0.7;
+    text-align: right;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+/*  social media links and logos created following https://www.w3schools.com/howto/howto_css_social_media_buttons.asp https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_social_media_buttons2 
+*/
+#social{
+    font-size: 25px;
+    float: left;
+    opacity: none; 
+}
+
+.fa {
+    padding: 15px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin:1px 1px;
+    border-radius: 100%;
+}
+ 
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+
+/* gallery.html page CSS */
+
+/* responsive gallery from https://www.w3schools.com/css/tryit.asp?filename=trycss_image_gallery_responsive */
+div.gallery {
+    border: 1px solid black;
+    margin-bottom: 100px;
+    /* box shadow effect from https://www.w3schools.com/Css/tryit.asp?filename=trycss_ex_images_card */
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5), 0 10px 30px 0 rgba(0, 0, 0, 0.5);
+}
+
+div.gallery:hover {
+    border: 3px solid #da291c;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.desc {
+    padding: 10px;
+    text-align: center;
+    background-color: #DA291C;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*with this setting I will see a max of 4 picture on the same row */
+.responsive {
+    padding: 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+/* with this setting, when the page has a width < 1000px I will see 2 images */
+@media only screen and (max-width: 1000px) {
+    .responsive {
+        width: 49.99999%;
+    }
+}
+
+/* with this setting, when the page has a width < 660px I will see just 1 image */
+@media only screen and (max-width: 660px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+
+/* donate.html page CSS */
+
+div#donate{
+    position: relative;
+    text-align: center;
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #03B2AA;
+    font-family: 'Permanent Marker';
+    font-size: 50px;
+}
+
+/* created grid layout following https://www.w3schools.com/cssref/pr_grid.asp */
+div.grid-container {
+    display: grid;
+    grid: auto / auto auto auto;
+    grid-gap: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+div.grid-container>div {
+    background-color: #da291c;
+    text-align: center;
+    padding:10px;
+    font-size: 30px;
+    border-radius: 10px;
+    color: white;
+}
+
+p.money{
+    font-family: 'Permanent Marker';
+    font-size: 40px;
+}
+
+ul#give{
+    position: relative;
+    margin-left: 30vw;
+    margin-right: 31vw;
+    margin-bottom: 5vw;
+
+}
+li.give{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: left;
+    font-family: 'Indie Flower';
+    font-size: 35px;
+	padding: 35px 0 30px 70px;
+    /* created list-style-image following https://www.w3schools.com/Css/css_list.asp and https://stackoverflow.com/questions/7775594/css-list-style-image-size */
+	background-image: url('images/logo_heart.jpg');
+    background-repeat: no-repeat;
+	background-position: left;
+	background-size: 50px;
+}
+
+/* setting image with full sceen width following instructions on https://css-tricks.com/full-width-containers-limited-width-parents/*/
+.full_width{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 10vw;
+    overflow: hidden;
+}
+
+/* about.html page CSS */
+
+/* to make the video size responsive with the browser I use the settings following example on https://www.youtube.com/watch?v=9YffrCViTVk */
+#intro_video{
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%;
+    height: 0;
+    align-content: center;
+}
+
+#intro_video iframe{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+}
+
+div#mission{
+    position: relative;
+    overflow: none;
+    background-color: #DA291C;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px;
+    color: white; 
+}
+
+div#about{
+    position: relative;
+    overflow: none;
+    background-color: #03B2AA;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px;
+    color: white;
+    margin-bottom: 130px;
+}
+
+div#statistics{
+    position: relative;
+    overflow: none;
+    background-color: #FC5D1A;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px;
+    margin-bottom: 0px;
+    color: white;    
+}
+
+/* CSS for table in about.html page */
+div#table{
+    position: relative;
+    overflow: none;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;    
+}
+
+p#table_heading{
+    text-align: center;
+    color: #FC5D1A ;
+    font-size: 21px;
+    font-family: 'Roboto';
+    font-weight: bold
+}
+
+p#table_info{
+    text-align: left;
+    color: black;
+    font-size: 15px;
+    font-family: 'Roboto';
+    font-weight: 500;
+}
+
+#stats
+{
+    width:80%;
+    margin: 20px auto;
+    border-collapse:collapse;
+    font-family: 'Roboto';
+    border: 1px solid black;
+}
+
+#stats td
+{
+    font-size:14px;
+    border:1px solid black;
+    padding:3px 8px 3px 8px;
+}
+
+#stats th 
+{
+    font-size:16px;
+    padding:3px 8px 3px 8px;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:5px;
+    background-color:#0175bb;
+    color:white;
+}
+
+/* to highlight the last column of the table with the last child  element */
+#stats td:last-child{
+    text-align:center;
+    font-weight: bold;
+}
+
+/* to highlight only the first 3 rows of the table I have adssigned a class to the relative <tr> */
+tr.heart_dis{
+    background-color: #97cfed;
+}
+
+/* CSS for text contents common to pages about.html; news.html and donate.html */
+h3{
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    margin: 10px;
+}
+/* CSS for text contents common to pages about.html; news.html and donate.html */
+p.text{
+    font-family: 'Poppins';
+    font-size: 15px;
+    text-align: left;
+    padding: 5px;
+}
+
+
+/* news.html page CSS */
+
+/* creating a responsive three column layout following guidelines on https://www.w3schools.com/howto/howto_css_three_columns.asp */
+/* Create three equal columns that floats next to each other */
+.news_column {
+    float: left;
+    width: 33%;
+    padding: 10px;
+    border-radius: 1vw;
+    margin:1px;
+    color: white;
+    margin-bottom: 3vw;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 750px) {
+    .news_column {
+        width: 100%;
+    }
+}
+
+/* Removing border from embedded YouTube videos*/
+iframe {
+    border: 0px;
+}
